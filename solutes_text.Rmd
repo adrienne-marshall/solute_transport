@@ -1,0 +1,37 @@
+---
+title: "Solute transport in soils"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    number_sections: true
+---
+
+This application was built by Adrienne Marshall for the University of Idaho course, Soil Physics (SOILS 515), taught by Dr. Robert Heinse. If you have questions or comments, send an email: adriennemarshall@uidaho.edu. 
+
+# Introduction 
+This website is designed as a tool for exploring the transport of solute pulses in soils. Solute transport can describe the movement of chemicals through soils, and has important implications for potential concentrations of chemicals in soils and water. 
+
+# Convection-dispersion equation and analytical solutions
+Solutes are transported by convection, diffusion, and dispersion. The convection-dispersion model describes the total flux of dissolved solutes in soil ($J_s$) due to the combined influences of these three mechanisms:
+$$J_s = D_e\frac{\partial c}{\partial x} + J_wc$$
+where $D_e$ is the combined diffusion-dispersion coefficient, $\frac{\partial c}{\partial x}$ is the change in solute concentration over space, $J_w$ is the Darcy flux of water, and $c$ is the concentration of soute. 
+
+The convection-dispersion model can be combined with the continuity equation to yield the convection-dispersion equation:
+$$R\frac{\partial c}{\partial t} = D\frac{\partial^2 c}{\partial x^2} - v\frac{\partial c}{\partial x} $$
+In the convection-dispersion equation, $D = \frac{D_e}{\theta}$, where $\theta$ is the mass of solute, $v = \frac{J_w}{\theta}$, and $R$ is a retardation factor defined as: $$R = 1 + \frac{\rho_bk_d}{\theta}$$.
+
+In order to effectively use the convection-dispersion equation, an analytical solution is in order. Jury et al (1991) derived an analytical solution for the case of a pulse of solute transport through a soil medium: $$ c(L, t) = \frac{AL\sqrt{R}}{2\sqrt{\pi Dt^3}}exp(-\frac{(RL - vt)^2}{4RDt})$$ where A is the pulse width, defined as $A = c_o\Delta t$. In these equations, the relationship between flow velocity (v), column length (L), and dispersion (D) can be expressed as a dimensionless Peclet number (P), where $P=vL/D$.
+
+# This application
+
+In this application, the "Peclet numbers" tab will allow you to explore the concentration of a solute pulse over time, given varying parameters for the Jury et al. solution. The "solutes in space and time" tab also uses the Jury et al. solution, but depicts solute concentration in both space and time given the parameters you set. Have fun exploring! 
+
+
+
+
+# References
+Jury, W.A., W.R., Gardner, and W.H. Gardner. 1991. Soil Physics. John Wiley and Sons, New York, NY.
+
+Or, D., M. Tuller and J.M. Wraith (2009). Agricultural and Environmental Soil Physics. 
